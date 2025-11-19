@@ -1,15 +1,22 @@
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card.tsx";
 import type { MatchDetailedProps } from "../types/types.ts";
+import {useNavigate} from "react-router";
 
 interface MatchDetailedCardProps {
     match: MatchDetailedProps;
 }
 
 const MatchDetailedCard =({ match }: MatchDetailedCardProps) => {
+    const navigate = useNavigate();
     const {
+        id,
         olympiacosName, opponentName, olympiacosGoals, opponentGoals, date, time, ground, result,
         day, competition, matchNumber, description, season
     } = match;
+
+    const handleClick = () => {
+        navigate(`${id}`)
+    }
 
     if (!result) return null;
 
@@ -49,7 +56,9 @@ const MatchDetailedCard =({ match }: MatchDetailedCardProps) => {
     const displayRight = rightScore ?? "-";
 
     return (
-        <Card className={`relative w-full max-w-md border border-gray-300 shadow-lg ${bgColor} hover:shadow-xl transition-shadow`}>
+        <Card
+            onClick={handleClick}
+            className={`relative w-full max-w-md border border-gray-200 shadow-md ${bgColor} hover:shadow-lg hover:scale-[1.01] cursor-pointer transition-all duration-300 ease-in-out`}>
             <div className="absolute top-2 left-2 bg-gray-700 text-white text-xs font-bold px-2 py-1 rounded">
                 Match #{matchNumber}
             </div>

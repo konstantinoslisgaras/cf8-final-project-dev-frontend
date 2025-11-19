@@ -168,3 +168,48 @@ export type PlayerMatchFullProps = {
     teamStatsDTO: TeamStatsProps;
     playerMatches: PlayerMatchProps[];
 };
+
+export interface PlayerMatchesPitchCardProps {
+    matchData: {
+        id: string;
+        olympiacosName: string;
+        opponentName: string;
+        olympiacosGoals: number;
+        opponentGoals: number;
+        description: string;
+        playerMatches: {
+            id: string;
+            player: string;
+            goals: number;
+            assists: number;
+            yellowCards: number;
+            redCards: number;
+            goalsConceded: number;
+            minutesPlayed: number;
+            shirtNumber: number;
+            position: string;
+        }[];
+        teamStatsDTO: {
+            id: string;
+            goals: number;
+            assists: number;
+            goalsConceded: number;
+            yellowCards: number;
+            redCards: number;
+            wins: number;
+            draws: number;
+            losses: number;
+            totalMatches: number;
+            season: string;
+        };
+        date: string;
+        time: string;
+        ground: string;
+        result: string;
+        matchNumber: number;
+        day: string;
+        competition: string;
+        season: string;
+        coachName: string;
+    };
+}

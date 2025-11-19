@@ -4,6 +4,7 @@ import MatchBasicCard from "../../MatchBasicCard.tsx";
 import StatLeadersCard from "../../StatLeadersCard.tsx";
 import type { StatLeadersInfoProps, MatchBasicProps, CompetitionProps, PlayerStat } from "../../../types/types.ts";
 import CountdownTimer from "../../CountdownTimer.tsx";
+import CompetitionsStatusCard from "../../CompetitionStatusCard.tsx";
 
 type HomePageInfo = {
     previousMatch?: MatchBasicProps;
@@ -68,7 +69,7 @@ const HomePage = () => {
 
                 {/* Previous Match */}
                 {info.previousMatch && (
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-center lg:items-start">
                         <span className="px-5 py-2 bg-oly-red-dark text-white font-semibold rounded-full mb-4 shadow text-sm uppercase tracking-wide">
                             Latest Match
                         </span>
@@ -77,44 +78,11 @@ const HomePage = () => {
                 )}
 
                 {/* Competitions */}
-                <div className="flex flex-col items-center">
-                    <span className="px-5 py-2 bg-blue-800 text-white font-semibold rounded-full mb-4 shadow text-sm uppercase tracking-wide">
-                        Competitions
-                    </span>
-                    <div className="w-full space-y-2">
-                        {info.competitionsStatus?.length ? (
-                            info.competitionsStatus.map((comp) => (
-                                <div
-                                    key={comp.id}
-                                    className="flex justify-between items-center bg-white border border-gray-200 shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow"
-                                >
-                                    <div>
-                                        <p className="font-semibold text-gray-900 text-lg">
-                                            {comp.competitionName}
-                                        </p>
-                                        <p className="text-sm text-gray-500">
-                                            Position:{" "}
-                                            <span className="font-semibold text-oly-red-dark">
-                                                {comp.competitionPosition}
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <span className="text-xl font-bold text-oly-red-dark">
-                                        {comp.competitionPoints} pts
-                                    </span>
-                                </div>
-                            ))
-                        ) : (
-                            <p className="text-gray-500 text-center py-4">
-                                Competition data coming soon...
-                            </p>
-                        )}
-                    </div>
-                </div>
+                <CompetitionsStatusCard competitions={info.competitionsStatus} />
 
                 {/* Next Match */}
                 {info.nextMatch && (
-                    <div className="flex flex-col items-end">
+                    <div className="flex flex-col items-center lg:items-end">
                         <span className="px-5 py-2 bg-oly-red-dark text-white font-semibold rounded-full mb-4 shadow text-sm uppercase tracking-wide">
                             Next Match
                         </span>

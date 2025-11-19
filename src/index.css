@@ -139,3 +139,14 @@
 .rotate-y-180 {
     transform: rotateY(180deg);
 }
+
+.player-goal::before {
+    content: "⚽";  /* or use a small image */
+    position: absolute;
+    top: -12px;     /* above the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #FFD000; /* golden icon */
+    pointer-events: none;
+}

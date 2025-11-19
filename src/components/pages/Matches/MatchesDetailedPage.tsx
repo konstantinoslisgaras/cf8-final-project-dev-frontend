@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import type { MatchDetailedProps } from "../../../types/types.ts";
 import { API_URL } from "../../../config/api.ts";
 import MatchDetailedCard from "../../MatchDetailedCard.tsx";
+import {useScrollMemory} from "../../../hooks/useScrollMemory.ts";
 
 const MatchesDetailedPage =() => {
     const [matchesDetailed, setMatchesDetailed] = useState<MatchDetailedProps[]>([]);
+
+    useScrollMemory();
 
     useEffect(() => {
         document.title = "Detailed";
