@@ -15,7 +15,7 @@ const TeamStatsPage =() => {
             try {
                 const { data } = await axiosClient.get(`${API_URL}/statistics/team/${teamStatsId}`);
                 setTeamStats(data);
-                document.title = `Olympiacos Stats`;
+                document.title = `Olympiacos FC Stats`;
             } catch (error) {
                 console.error(error);
             } finally {

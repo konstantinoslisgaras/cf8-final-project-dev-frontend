@@ -19,7 +19,7 @@ const PlayersMatchesPage = () => {
             try {
                 const { data } = await axiosClient.get(`${API_URL}/matches/detailed/${matchId}`);
                 setMatchData(data);
-                document.title = `${data.olympiacosName} Match | Players`;
+                document.title = `${data.id}`;
             } catch (err) {
                 console.error(err);
             } finally {

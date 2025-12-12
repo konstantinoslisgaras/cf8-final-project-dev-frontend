@@ -12,7 +12,7 @@ const HomePage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        document.title = "Olympiacos FC Stats";
+        document.title = "Unofficial Olympiacos FC Stats";
 
         const fetchData = async () => {
             try {

@@ -31,7 +31,6 @@ const CompetitionCard = ({ competition }: CompetitionCardProps) => {
                     </p>
                 </div>
 
-                {/* Olympiacos Trophies - only show if > 0 */}
                 {olympiacosTrophies > 0 && (
                     <div className={`flex items-center justify-center gap-2 border rounded-lg py-2 px-3 ${
                         isUEFAConferenceLeague
@@ -42,7 +41,7 @@ const CompetitionCard = ({ competition }: CompetitionCardProps) => {
                         <span className={`font-semibold text-sm sm:text-base ${
                             isUEFAConferenceLeague ? "text-amber-800" : "text-yellow-700"
                         }`}>
-                            Olympiacos has won this competition {olympiacosTrophies}{" "}
+                            Olympiacos FC has won this competition {olympiacosTrophies}{" "}
                             {olympiacosTrophies === 1 ? "time" : "times"}
                         </span>
                     </div>

@@ -88,7 +88,6 @@ const Header = () => {
                 </Dropdown>
             </li>
 
-            {/* === DROPDOWN: OLYMPIACOS === */}
             <li>
                 <Dropdown label="Information">
                     <li>

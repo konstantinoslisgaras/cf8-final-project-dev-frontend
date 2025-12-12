@@ -5,7 +5,6 @@ interface PlayersMatchesHeaderProps {
 }
 
 const PlayersMatchesHeaderCard = ({ matchData }: PlayersMatchesHeaderProps) => {
-    // Determine if Olympiacos is home or away
     const isOlympiacosHome = matchData.ground?.toLowerCase() === "home";
 
     const leftTeam = isOlympiacosHome ? matchData.olympiacosName : matchData.opponentName;
