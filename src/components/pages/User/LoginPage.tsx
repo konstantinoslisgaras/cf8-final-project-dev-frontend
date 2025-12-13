@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
 
         try {
             await loginUser({ username, password });
-            navigate("/homepage");
+            navigate("/history");
         } catch (err: unknown) {
             const message = err instanceof Error ? err.message : "Invalid username or password";
             setError(message);
