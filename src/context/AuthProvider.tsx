@@ -50,6 +50,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null);
     };
 
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-screen bg-gray-50">
+                <div className="text-center">
+                    <div className="w-12 h-12 border-4 border-oly-red border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <p className="mt-4 text-gray-600">Loading your Olympiacos FC experience...</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <AuthContext.Provider
             value={{
