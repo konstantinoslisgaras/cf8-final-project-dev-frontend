@@ -6,10 +6,13 @@ import CountdownTimer from "../../cards/HomePage/CountdownTimer.tsx";
 import CompetitionsStatusCard from "../../cards/HomePage/CompetitionStatusCard.tsx";
 import type { HomePageProps } from "../../../types/types.ts";
 import CurrentStreak from "../../cards/HomePage/CurrentStreak.tsx";
+import {useScrollMemory} from "../../../hooks/useScrollMemory.ts";
 
 const HomePage = () => {
     const [info, setInfo] = useState<HomePageProps | null>(null);
     const [loading, setLoading] = useState(true);
+
+    useScrollMemory();
 
     useEffect(() => {
         document.title = "Unofficial Olympiacos FC Stats";

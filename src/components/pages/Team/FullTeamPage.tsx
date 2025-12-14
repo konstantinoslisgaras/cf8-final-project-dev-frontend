@@ -4,6 +4,7 @@ import type { PlayerProps, CoachProps } from "../../../types/types.ts";
 import PlayerCard from "../../cards/Players/PlayerCard.tsx";
 import CoachCard from "../../cards/Coach/CoachCard.tsx";
 import axiosClient from "../../../api/axiosClient.ts";
+import {useScrollMemory} from "../../../hooks/useScrollMemory.ts";
 
 interface FullTeamData {
     players: PlayerProps[];
@@ -12,6 +13,8 @@ interface FullTeamData {
 
 const FullTeamPage =() => {
     const [team, setTeam] = useState<FullTeamData | null>(null);
+
+    useScrollMemory();
 
     useEffect(() => {
         document.title = "FullTeam";

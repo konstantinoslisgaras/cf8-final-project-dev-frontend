@@ -41,14 +41,13 @@ export const registerSchema = z.object({
         .string({ message: "Please enter a valid email address (must include a '@' and a domain end)." })
         .max(100, { message: "Email cannot exceed 100 characters." }),
 
-    dateOfBirth: z
-        .string()
-        .optional()
+    dateOfBirth: z.string()
         .refine((val) => {
-            if (!val) return true; // allow empty values
+            if (!val) return true;
             const date = new Date(val);
             return date >= minDate && date <= today;
-        }, "Date of birth must be in the past and within the last 120 years"),
+        }, "Date of birth must be in the past and within the last 120 years")
+        .optional(),
 
     genderType: z
         .enum(["PREFER_NOT_TO_DISCLOSE", "MALE", "FEMALE", "OTHER"], {

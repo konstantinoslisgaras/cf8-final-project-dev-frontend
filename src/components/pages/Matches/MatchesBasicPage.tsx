@@ -3,9 +3,12 @@ import type { MatchBasicProps } from "../../../types/types.ts";
 import { API_URL } from "../../../config/api.ts";
 import MatchBasicCard from "../../cards/Matches/MatchBasicCard.tsx";
 import axiosClient from "../../../api/axiosClient.ts";
+import {useScrollMemory} from "../../../hooks/useScrollMemory.ts";
 
 const MatchesBasicPage =() => {
     const [matchesBasic, setMatchesBasic] = useState<MatchBasicProps[]>([]);
+
+    useScrollMemory();
 
     useEffect(() => {
         document.title = "Fixtures";

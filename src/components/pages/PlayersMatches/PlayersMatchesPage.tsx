@@ -52,7 +52,7 @@ const PlayersMatchesPage = () => {
             </div>
 
             {/* Layout */}
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-5 items-center lg:items-start text-center">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-5 items-center lg:items-start text-center mb-12">
                 {/* Left column */}
                 <div className="lg:w-[30%] w-full space-y-5 flex flex-col items-center">
                     <PlayersMatchesInfoCard
