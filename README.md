@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# ⚽ Omicron Team Stats 📊 (frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### A Simple Football Analytics Platform
 
-Currently, two official plugins are available:
+OTS is a sophisticated, full-stack Java application designed to transform raw football data into actionable, winning strategies. Built for coaches, analysts, and fans who demand precision, this platform delivers real-time statistics, predictive analytics, and comprehensive match intelligence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# 🎓 Project Origin
+This application was developed as the Final Project for Coding Factory 8 at the Athens University of Economics and Business (AUEB). It serves as a comprehensive demonstration of expertise across modern enterprise architecture, database design, and front-end development, specifically leveraging the power of the Java/Spring ecosystem.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 🔗 Live Render Link - Give it a Try
+https://omicron-team-stats-cf8-frontend.onrender.com/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+***Deployment Limitation (Render Free Tier):
+The server is subject to "cold starts" upon inactivity.
+While a PUT request cron job is activating every 12 minutes to mitigate downtime,
+this solution is not fully reliable.
+Expect initial response delays of up to 1 minute as the host resumes service.***
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 🚀 Quick Deployment
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Database (Recommended: MySQL/Postgres)
+an empty database && config env files
+### Backend (Recommended: IntelliJ)
+cd backend && ./gradlew build && ./gradlew bootrun
+### Frontend (Recommended: WebStorm)
+cd frontend && npm install && npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Access
+🌐 App: http://localhost:3000
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🔧 API: http://localhost:8080/api
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+📚 Docs: http://localhost:8080/swagger-ui.html
+
+---
+
+## ✨ Features
+| Icon | Feature             | Description                           |
+|------|---------------------|---------------------------------------|
+| 📊 | **Statistics**      | Full player and match statistics      |
+| 👥 | **Player Profiles** | Detailed player information and stats |
+| 🏆 | **Leaderboards**    | Fan and player rankings               |
+| 🔐 | **Authentication**  | Secure user login and registration    |
+| 📱 | **Responsive**      | Works on all devices                  |
+
+---
+
+# 🌐 Website Structure & Navigation
+- ├── 📁 Login
+- ├── 📁 Register
+- ├── 📁 Homepage
+- ├── 📁 Statistics
+- ├── 📁 Matches
+    - ├── 📁 Schedule ├── 📁 Results ├── 📁 Detailed
+- ├── 📁 Full Team
+-   - ├── 📁 Player Bio ├── 📁 Player Stats ├── 📁 Coach Bio ├── 📁 Coach Stats
+- ├── 📁 Club Info
+- - ├── 📁 Competitions ├── 📁 History
+- ├── 📁 Profile ├── 📁 Edit Profile
+- └── 📁 Super Admin Page
+
+---
+
+# 📄 License
+Distributed under the MIT License.
