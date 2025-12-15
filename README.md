@@ -85,9 +85,16 @@ Personalized experience for registered supporters.
 
 ---
 
+# 🗺️ Database Map
+
+
+<img width="1351" height="816" alt="ots_project_structure" src="https://github.com/user-attachments/assets/7f9184cc-3f64-476a-849b-2c82062a6521" />
+
+---
+
 # 📄 License
 Distributed under the MIT License.
 
 ---
 
-### 📧 konstantinoslisgaras@gmail.com
+📧 konstantinoslisgaras@gmail.com
